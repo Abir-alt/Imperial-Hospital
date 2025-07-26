@@ -1,0 +1,104 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-warning" href="#">
+      <i class="bi bi-hospital"></i> Imperial Hospital
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item me-2">
+          <a class="nav-link text-white" routerLink="/create-patient">
+            <i class="bi bi-calendar-plus"></i> Add Patient
+          </a>
+        </li>
+        <li class="nav-item me-2">
+          <a class="nav-link text-white" routerLink="/medicine">
+            <i class="bi bi-capsule"></i> View Medicine
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-light" (click)="logout()">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Container -->
+<div class="container mt-5">
+  <hr class="border border-primary border-2 opacity-50" />
+
+  <!-- Page Heading -->
+  <h2 class="text-center text-primary mb-4 fw-bold">
+    <i class="bi bi-clipboard2-pulse"></i> Dashboard
+  </h2>
+
+  <!-- Marquee Welcome -->
+  <div class="mb-4">
+    <marquee behavior="scroll" direction="left" scrollamount="6" class="text-success fw-semibold fs-5">
+      🏥 Welcome to the Appointment Dashboard of Imperial Hospital. Manage all appointments and patient details efficiently!
+    </marquee>
+  </div>
+
+  <!-- Subheading -->
+  <h4 class="text-muted mb-3">📝 Current Patient List in the Queue</h4>
+
+  <!-- Patient Table -->
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover shadow-sm rounded">
+      <thead class="table-primary text-center">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Blood</th>
+          <th>Prescription</th>
+          <th>Does</th>
+          <th>Urgency</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients" class="text-center align-middle">
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.blood }}</td>
+          <td>{{ patient.prescription }}</td>
+          <td>{{ patient.does }}</td>
+          <td>
+            <span
+              class="badge px-3 py-2 fs-6"
+              [ngClass]="{
+                'bg-danger': patient.urgency === 'High',
+                'bg-warning text-dark': patient.urgency === 'Medium',
+                'bg-success': patient.urgency === 'Low'
+              }"
+            >
+              {{ patient.urgency }}
+            </span>
+          </td>
+          <td>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+              <button (click)="update(patient.id)" class="btn btn-success btn-sm">
+                <i class="bi bi-pencil"></i> Update
+              </button>
+              <button (click)="delete(patient.id)" class="btn btn-danger btn-sm">
+                <i class="bi bi-trash3"></i> Delete
+              </button>
+              <button (click)="view(patient.id)" class="btn btn-info btn-sm text-white">
+                <i class="bi bi-eye"></i> View
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

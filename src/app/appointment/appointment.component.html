@@ -1,0 +1,65 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">Imperial Hospital</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/create-appointment">Add Appointment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/admin">Admin</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container mt-5">
+  <hr />
+  <h2 class="text-center text-primary mb-4">Appointment</h2>
+
+  <div class="mb-4">
+    <marquee behavior="scroll" direction="left" scrollamount="6" class="text-success fw-semibold">
+      Welcome to the Appointment Dashboard of Imperial Hospital. Here you can manage all appointments and patient details efficiently.
+    </marquee>
+  </div>
+
+  <h4 class="text-muted mb-3">Current Patient List in the Queue</h4>
+
+  <div class="table-responsive shadow rounded">
+    <table class="table table-striped table-bordered table-hover align-middle">
+      <thead class="table-dark text-center">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Symptoms</th>
+          <th>Contact Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments" class="text-center">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.name }}</td>
+          <td>{{ appointment.age }}</td>
+          <td>{{ appointment.symptoms }}</td>
+          <td>{{ appointment.number }}</td>
+          <td>
+            <button class="btn btn-sm btn-danger me-2" (click)="delete(appointment.id)">
+              <i class="bi bi-trash3-fill"></i> Delete
+            </button>
+        
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

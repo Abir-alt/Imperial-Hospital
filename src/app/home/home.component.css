@@ -1,0 +1,49 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .btn-danger {
+    transition: 0.3s;
+  }
+
+  .btn-danger:hover {
+    background-color: #b02a37;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+
+  .carousel-caption .caption-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+  }
+
+  .info-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  footer {
+    background-color: #212529;
+    color: #f8f9fa;
+    padding: 1rem;
+    border-top: 4px solid #814046;
+  }
+
+  footer p {
+    margin: 0;
+  }

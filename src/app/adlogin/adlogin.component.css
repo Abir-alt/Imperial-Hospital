@@ -1,0 +1,10 @@
+.card {
+    background: #fff;
+    border-radius: 1rem;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  

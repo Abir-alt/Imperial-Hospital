@@ -1,0 +1,49 @@
+<div class="container mt-5">
+
+    <!-- Form Heading -->
+    <h2 class="text-center text-primary mb-4 fw-bold">
+      <i class="bi bi-capsule"></i> Update Medicine
+    </h2>
+  
+    <!-- Update Medicine Form -->
+    <form (ngSubmit)="onSubmit()" class="shadow p-4 rounded bg-light">
+  
+      <!-- Drug Name -->
+      <div class="form-group mb-3">
+        <label for="drugName" class="form-label fw-semibold">Drug Name</label>
+        <input
+          type="text"
+          id="drugName"
+          class="form-control"
+          [(ngModel)]="medicine.drugName"
+          name="drugName"
+          placeholder="Enter medicine name"
+          required
+        >
+      </div>
+  
+      <!-- Stock -->
+      <div class="form-group mb-4">
+        <label for="stock" class="form-label fw-semibold">Stock</label>
+        <input
+          type="number"
+          id="stock"
+          class="form-control"
+          [(ngModel)]="medicine.stock"
+          name="stock"
+          placeholder="Enter available stock"
+          required
+        >
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-success px-4">
+          <i class="bi bi-check-circle"></i> Submit
+        </button>
+      </div>
+  
+    </form>
+  
+  </div>
+  

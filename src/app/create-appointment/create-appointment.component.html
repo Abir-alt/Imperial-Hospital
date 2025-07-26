@@ -1,0 +1,63 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">🏥 Imperial Hospital</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+           
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/admin">
+              <i class="bi bi-person-gear"></i> Admin
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Appointment Form -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0">
+          <div class="card-header bg-success text-white text-center fw-bold">
+            <h4>Add New Appointment</h4>
+          </div>
+          <div class="card-body bg-light">
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Enter Name" [(ngModel)]="appointment.name" required />
+              </div>
+  
+              <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" id="age" class="form-control" name="age" placeholder="Enter Age" [(ngModel)]="appointment.age" required />
+              </div>
+  
+              <div class="mb-3">
+                <label for="symptoms" class="form-label">Symptoms</label>
+                <input type="text" id="symptoms" class="form-control" name="symptoms" placeholder="Enter Symptoms" [(ngModel)]="appointment.symptoms" required />
+              </div>
+  
+              <div class="mb-3">
+                <label for="number" class="form-label">Number</label>
+                <input type="text" id="number" class="form-control" name="number" placeholder="Enter Contact Number" [(ngModel)]="appointment.number" required />
+              </div>
+  
+              <button type="submit" class="btn btn-success w-100">
+                <i class="bi bi-check-circle"></i> Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
